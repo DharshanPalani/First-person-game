@@ -16,4 +16,5 @@ MonoBehaviour:
   damage: 10
   range: 150
   coolDown: 0.3
-  magazineSize: 30
+  clipSize: 30
+  ammoSize: 10

@@ -11,6 +11,5 @@ public class GunScriptableObject : ScriptableObject
     public float coolDown;
 
     public float clipSize;
-    public float magazineSize;
     public float ammoSize;
 }
