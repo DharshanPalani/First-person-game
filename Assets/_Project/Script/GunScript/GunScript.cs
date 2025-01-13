@@ -44,7 +44,7 @@ public class GunScript : MonoBehaviour
         PerformRaycast();
 
 
-        if (Input.GetKeyDown(KeyCode.R)) Reload();
+        if (Input.GetKeyDown(KeyCode.R)) StartCoroutine(ReloadDelay());
         if (Cursor.lockState != CursorLockMode.Locked) return;
         if (!Input.GetMouseButton(0)) return;
         if (Time.time <= _nextFireTime) return;
@@ -139,6 +139,12 @@ public class GunScript : MonoBehaviour
                 healthComponent.UpdateHealth(-_damage);
             }
         }
+    }
+
+    private IEnumerator ReloadDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        Reload();
     }
 
     private void Reload()
